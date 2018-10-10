@@ -1,0 +1,7 @@
+[30-Sep-2018 20:48:28 UTC] PHP Fatal error:  Call to undefined method Categorias_model::listar_categorias() in /home/valltech/public_html/dev/CodeIgniter/application/controllers/Home.php on line 9
+[30-Sep-2018 20:48:44 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/valltech/public_html/dev/CodeIgniter/application/views/frontend/template/header.php on line 63
+[30-Sep-2018 20:52:46 UTC] PHP Fatal error:  Call to undefined function limpar() in /home/valltech/public_html/dev/CodeIgniter/application/views/frontend/template/header.php on line 63
+[30-Sep-2018 20:52:54 UTC] PHP Fatal error:  Call to undefined function limpar() in /home/valltech/public_html/dev/CodeIgniter/application/views/frontend/template/header.php on line 63
+[01-Oct-2018 17:49:41 UTC] PHP Fatal error:  Call to undefined method Categorias_model::lista_destaques() in /home/valltech/public_html/dev/CodeIgniter/application/controllers/Home.php on line 17
+[08-Oct-2018 17:11:02 UTC] PHP Fatal error:  Call to undefined method Categorias_model::adicionar() in /home/valltech/public_html/dev/CodeIgniter/application/controllers/admin/Categoria.php on line 40
+[09-Oct-2018 14:42:34 UTC] PHP Fatal error:  Call to a member function adicionar() on null in /home/valltech/public_html/dev/CodeIgniter/application/controllers/admin/Usuarios.php on line 39
