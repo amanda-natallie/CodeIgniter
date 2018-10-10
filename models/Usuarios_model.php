@@ -1,4 +1,6 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
+
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuarios_model extends CI_Model {
 
@@ -11,34 +13,34 @@ class Usuarios_model extends CI_Model {
         parent::__construct();
     }
 
-    public function lista_categorias() {
-        $this->db->order_by("user_nome", "DESC");                                                  
-        return $this->db->get("tbl_categorias")->result();
+    public function lista_usuarios() {
+        $this->db->order_by("user_nome", "DESC");
+        return $this->db->get("tbl_usuarios")->result();
     }
-    public function lista_titulo($id) {
-        $this->db->select("user_nome");   
-        $this->db->from("tbl_categorias");   
-        $this->db->where("user_id", $id);   
+
+   
+    public function lista_usuario($id) {
+        $this->db->select("*");
+        $this->db->from("tbl_usuarios");
+        $this->db->where("user_id", $id);
         return $this->db->get()->result();
     }
-    public function lista_categoria($id) {
-        $this->db->select("*");   
-        $this->db->from("tbl_categorias");   
-        $this->db->where("user_id", $id);   
-        return $this->db->get()->result();
-    }
-    public function adicionar($nome){
+
+    public function adicionar($nome) {
         $dados['user_nome'] = $nome;
-        return $this->db->insert("tbl_categorias", $dados);
+        return $this->db->insert("tbl_usuarios", $dados);
     }
-    public function excluir($id){
+
+    public function excluir($id) {
         $dados['user_id'] = $id;
-        return $this->db->delete("tbl_categorias", $dados);
+        return $this->db->delete("tbl_usuarios", $dados);
     }
-    public function editar($id, $nome){
+
+    public function editar($id, $nome) {
         $dados['user_id'] = $id;
         $dados['user_nome'] = $nome;
         $this->db->where("user_id", $id);
-        return $this->db->update("tbl_categorias", $dados);
+        return $this->db->update("tbl_usuarios", $dados);
     }
+
 }
