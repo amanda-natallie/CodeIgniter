@@ -1,24 +1,26 @@
-<?php
-
-ob_start();
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php ob_start(); defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuarios extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        
+        $this->load->model('usuarios_model', 'Muser');
+        $this->usuarios = $this->Muser->lista_usuarios();
     }
 
     public function index() {
         if (!$this->session->userdata('logado')) {
             redirect(base_url('admin/login'));
         }
+        
+        $dados['usuarios'] = $this->usuarios;
         $dados['title'] = "Admin";
-        $dados['subtitle'] = " Página inicial";
-
-        $this->load->view('backend/template/html-header', $dados);
+        $dados['subtitle'] = "Usuário";
+        
+        $this->load->view('backend/template/html-header', $dados); 
         $this->load->view('backend/template/template');
-        $this->load->view('backend/home');
+        $this->load->view('backend/usuario/ver');
         $this->load->view('backend/template/html-footer');
     }
 
@@ -65,6 +67,9 @@ class Usuarios extends CI_Controller {
         redirect(base_url("admin/login"));
     }
     
-    
+    public function verUsuarios() {
+        
+        
+    }
 
 }

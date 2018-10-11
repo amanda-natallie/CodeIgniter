@@ -7,7 +7,7 @@
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?= base_url('admin/');?>"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?= base_url('admin/categoria');?>"><?= $title; ?></a></li>
+            <li><a href="<?= base_url('admin/usuario');?>"><?= $title; ?></a></li>
             <li class="active"><?= $subtitle; ?></li>
         </ol>
     </section>
@@ -17,8 +17,8 @@
             <div class="col-xs-12">
                 <div class="box box-info">
                     <div class="box-header">
-                        <h3 class="box-title">Visualize aqui as <?= $subtitle; ?>s existentes</h3>
-                        <a href="<?= base_url('admin/categoria/inserir');?>" class="btn btn-small pull-right btn-flat btn-primary">Inserir nova categoria</a>
+                        <h3 class="box-title">Visualize aqui os <?= $subtitle; ?>s existentes</h3>
+                        <a href="<?= base_url('admin/usuario/inserir');?>" class="btn btn-small pull-right btn-flat btn-primary">Inserir novo usuário</a>
                     
                     </div>
 
@@ -33,13 +33,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($categorias as $cat) { ?>
+                                <?php foreach ($usuarios as $cat) { ?>
                                     <tr>
-                                        <td><?= $cat->cat_id?></td>
-                                        <td><?= $cat->cat_nome?></td>
+                                        <td><?= $cat->user_id?></td>
+                                        <td><?= $cat->user_nome?></td>
                                         <td>
-                                            <a href="<?= base_url('admin/categoria/editar/'.$cat->cat_id);?>" class="btn btn-flat btn-info"><i class="fa fa-edit"></i></a>
-                                            <a onclick="deletar(<?= $cat->cat_id; ?>)" class="btn btn-flat btn-danger"><i class="fa fa-trash"></i></a>
+                                            <a href="<?= base_url('admin/usuario/editar/'.$cat->user_id);?>" class="btn btn-flat btn-info"><i class="fa fa-edit"></i></a>
+                                            <a onclick="deletar(<?= $cat->user_id; ?>)" class="btn btn-flat btn-danger"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -63,7 +63,7 @@
 <script>
     function deletar(id) {
             if (confirm("Deseja mesmo excluir?")) {
-                window.location.href = "<?= base_url('admin/categoria/excluir/');?>" + id;
+                window.location.href = "<?= base_url('admin/usuario/excluir/');?>" + id;
             }
         }
     
