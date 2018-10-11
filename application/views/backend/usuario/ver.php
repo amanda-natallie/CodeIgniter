@@ -18,7 +18,7 @@
                 <div class="box box-info">
                     <div class="box-header">
                         <h3 class="box-title">Visualize aqui os <?= $subtitle; ?>s existentes</h3>
-                        <a href="<?= base_url('admin/usuario/inserir');?>" class="btn btn-small pull-right btn-flat btn-primary">Inserir novo usuário</a>
+                        <a href="<?= base_url('admin/usuarios/cadastro');?>" class="btn btn-small pull-right btn-flat btn-primary">Inserir novo usuário</a>
                     
                     </div>
 
@@ -29,17 +29,19 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Nome</th>
+                                    <th>E-mail</th>
                                     <th style="width:100px">Opções</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($usuarios as $cat) { ?>
+                                <?php foreach ($usuarios as $user) { ?>
                                     <tr>
-                                        <td><?= $cat->user_id?></td>
-                                        <td><?= $cat->user_nome?></td>
+                                        <td><?= $user->user_id; ?></td>
+                                        <td><?= $user->user_nome; ?></td>
+                                        <td><?= $user->user_email; ?></td>
                                         <td>
-                                            <a href="<?= base_url('admin/usuario/editar/'.$cat->user_id);?>" class="btn btn-flat btn-info"><i class="fa fa-edit"></i></a>
-                                            <a onclick="deletar(<?= $cat->user_id; ?>)" class="btn btn-flat btn-danger"><i class="fa fa-trash"></i></a>
+                                            <a href="<?= base_url('admin/usuarios/editar/'.$user->user_id);?>" class="btn btn-flat btn-info"><i class="fa fa-edit"></i></a>
+                                            <a onclick="deletar(<?= $user->user_id; ?>)" class="btn btn-flat btn-danger"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -48,6 +50,7 @@
                                 <tr>
                                    <th>#</th>
                                     <th>Nome</th>
+                                    <th>E-mail</th>
                                     <th>Opções</th>
                                 </tr>
                             </tfoot>
@@ -63,7 +66,7 @@
 <script>
     function deletar(id) {
             if (confirm("Deseja mesmo excluir?")) {
-                window.location.href = "<?= base_url('admin/usuario/excluir/');?>" + id;
+                window.location.href = "<?= base_url('admin/usuarios/excluir/');?>" + id;
             }
         }
     

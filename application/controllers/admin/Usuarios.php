@@ -1,27 +1,30 @@
-<?php ob_start(); defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
+
+ob_start();
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuarios extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        
+
         $this->load->model('usuarios_model', 'Muser');
         $this->usuarios = $this->Muser->lista_usuarios();
     }
 
     public function index() {
-        if (!$this->session->userdata('logado')) {
-            redirect(base_url('admin/login'));
+         if (verificaPermissao($this->session->userdata('logado'), $this->session->userdata('userlogado')->user_permissao) == false) {
+            exit;
+        } else {
+            $dados['usuarios'] = $this->usuarios;
+            $dados['title'] = "Admin";
+            $dados['subtitle'] = "Usuário";
+
+            $this->load->view('backend/template/html-header', $dados);
+            $this->load->view('backend/template/template');
+            $this->load->view('backend/usuario/ver');
+            $this->load->view('backend/template/html-footer');
         }
-        
-        $dados['usuarios'] = $this->usuarios;
-        $dados['title'] = "Admin";
-        $dados['subtitle'] = "Usuário";
-        
-        $this->load->view('backend/template/html-header', $dados); 
-        $this->load->view('backend/template/template');
-        $this->load->view('backend/usuario/ver');
-        $this->load->view('backend/template/html-footer');
     }
 
     public function pag_login() {
@@ -66,10 +69,21 @@ class Usuarios extends CI_Controller {
         $this->session->set_userdata($dadosSessao);
         redirect(base_url("admin/login"));
     }
-    
-    public function verUsuarios() {
-        
-        
+
+    public function cadastro() {
+        if (verificaPermissao($this->session->userdata('logado'), $this->session->userdata('userlogado')->user_permissao) == false) {
+            exit;
+        } else {
+
+            $dados['usuarios'] = $this->usuarios;
+            $dados['title'] = "Admin";
+            $dados['subtitle'] = "Usuário";
+
+            $this->load->view('backend/template/html-header', $dados);
+            $this->load->view('backend/template/template');
+            $this->load->view('backend/usuario/cadastrar');
+            $this->load->view('backend/template/html-footer');
+        }
     }
 
 }

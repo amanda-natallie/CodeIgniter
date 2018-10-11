@@ -1,20 +1,20 @@
-﻿<?php defined('BASEPATH') OR exit('No direct script access allowed');
+﻿<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-function limpar($str, $replace=array(), $delimiter='-') {
-   setlocale(LC_ALL, 'en_US.UTF8');
+function limpar($str, $replace = array(), $delimiter = '-') {
+    setlocale(LC_ALL, 'en_US.UTF8');
 
-    if( !empty($replace) ) {
-        $str = str_replace((array)$replace, ' ', $str);
+    if (!empty($replace)) {
+        $str = str_replace((array) $replace, ' ', $str);
     }
- 
+
     $clean = iconv('UTF-8', 'ASCII//TRANSLIT', $str);
     $clean = preg_replace("/[^a-zA-Z0-9\/_|+ -]/", '', $clean);
     $clean = strtolower(trim($clean, '-'));
     $clean = preg_replace("/[\/_|+ -]+/", $delimiter, $clean);
- 
+
     return $clean;
 }
-
 
 function limita_caracteres($var, $limite) {
     if (strlen($var) > $limite) {
@@ -58,4 +58,25 @@ function gerarData($data) {
     $data2 = $data[2] . ' de ' . $mes . ' de ' . $data[0];
 
     return $data2;
+}
+
+function verificaPermissao($logado, $permissao) {
+    if (!$logado) {
+        redirect(base_url('admin/login'));
+        return false;
+    }
+    if ($permissao != 1) {
+        redirect(base_url('admin/'));
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function liberaMenu($permissao, $rota, $nomeMenu, $icon) {
+    if ($permissao != 1) {
+        return false;
+    } else {
+        echo '<li><a href="' . base_url($rota) . '"><i class="fa ' . $icon . '"></i>' . $nomeMenu . '</a></li>';
+    }
 }

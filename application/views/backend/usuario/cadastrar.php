@@ -16,24 +16,22 @@
             <div class="box-body">
                 <div class="row">
                     <div class="col-md-12">
-                        
+
                         <?php
-                        echo validation_errors('<div class="alert alert-danger">','</div>');
-                        echo form_open('admin/categoria/cadastrar');
+                        echo validation_errors('<div class="alert alert-danger">', '</div>');
+                        echo form_open('admin/usuarios/inserir');
                         ?>
                         <div class="form-group">
                             <label for="cat-nome">Nome da categoria</label>
-                            <input type="text" class="form-control" id="cat-nome" name="cat-nome" placeholder="Digite o nome da Categoria">
+                            <input type="text" class="form-control" id="cat-nome" name="cat-nome" pla ceholder="Digite o nome da Categoria">
                         </div>
                         <div class="box-footer">
                             <input type="submit" name="btn_alt_df" class="btn btn-primary btn-flat" value="Cadastrar">
-                            <a href=""  class="btn btn-danger btn-flat" >Voltar para o gerenciamento de <?= $subtitle; ?></a>
+                            <a href="<?= base_url("admin/usuarios");?>"  class="btn btn-danger btn-flat" >Voltar para o gerenciamento de <?= $subtitle; ?></a>
                         </div>
                         <?= form_close(); ?>
                     </div>
                 </div>
-
             </div>
         </div>
-
 </div>

@@ -53,12 +53,13 @@
                         </div>
                     </div>
                     
-                    
+                    <?php  $p = $this->session->userdata('userlogado')->user_permissao; ?>
                    <ul class="sidebar-menu" data-widget="tree">
                         <li class="header">Menu Principal</li>
 
                         <li><a href="<?= base_url(); ?>"><i class="fa fa-home"></i> <span>Home</span></a></li>
-                        <li><a href="<?= base_url('admin/categoria'); ?>"><i class="fa fa-search-plus"></i>Categorias</a></li>
+                        <?= liberaMenu($p, 'admin/categoria', "Categorias", "fa-calculator"); ?>
+                        <?= liberaMenu($p, 'admin/usuarios', "Usuários", "fa-user"); ?>
                         <!--<li><a href="ger_slides.php"><i class="fa fa-camera"></i>Slides Home</a></li>
                         <li class="treeview">
                             <a href="#">
