@@ -16,13 +16,13 @@
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="<?= base_url("assets/backend/img/user2-160x160.jpg")?>" class="user-image" alt="User Image">
-                                    <span class="hidden-xs">Alexander Pierce</span>
+                                    <span class="hidden-xs"><?= $this->session->userdata('userlogado')->user_nome; ?></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="user-header">
                                         <img src="<?= base_url("assets/backend/img/user2-160x160.jpg")?>" class="img-circle" alt="User Image">
                                         <p>
-                                            Alexander Pierce - Web Developer
+                                            <?= $this->session->userdata('userlogado')->user_nome; ?> - Web Developer
                                             <small>Member since Nov. 2012</small>
                                         </p>
                                     </li>
@@ -48,7 +48,7 @@
                             <img src="<?= base_url("assets/backend/img/user2-160x160.jpg")?>" class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info">
-                            <p>Alexander Pierce</p>
+                            <p><?= $this->session->userdata('userlogado')->user_nome; ?></p>
                             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                         </div>
                     </div>
@@ -58,10 +58,10 @@
                         <li class="header">Menu Principal</li>
 
                         <li><a href="<?= base_url(); ?>"><i class="fa fa-home"></i> <span>Home</span></a></li>
-                        <?= liberaMenu($p, 'admin/categoria', "Categorias", "fa-calculator"); ?>
-                        <?= liberaMenu($p, 'admin/usuarios', "Usuários", "fa-user"); ?>
-                        <!--<li><a href="ger_slides.php"><i class="fa fa-camera"></i>Slides Home</a></li>
-                        <li class="treeview">
+                        <?= apenasADM($p, 'admin/categoria', "Categorias", "fa-calculator"); ?>
+                        <?= apenasGESTOR($p, 'admin/usuarios', "Usuários", "fa-user"); ?>
+                        <li><a href="ger_slides.php"><i class="fa fa-camera"></i>Slides Home</a></li>
+                        <!--<li class="treeview">
                             <a href="#">
                                 <i class="fa fa-file-archive-o"></i> <span>Configurações de Textos</span>
                                 <i class="fa fa-angle-left pull-right"></i>

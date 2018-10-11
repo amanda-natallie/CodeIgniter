@@ -19,7 +19,6 @@
                     <div class="box-header">
                         <h3 class="box-title">Visualize aqui os <?= $subtitle; ?>s existentes</h3>
                         <a href="<?= base_url('admin/usuarios/cadastro');?>" class="btn btn-small pull-right btn-flat btn-primary">Inserir novo usuário</a>
-                    
                     </div>
 
                     <div class="box-body">
@@ -30,6 +29,7 @@
                                     <th>#</th>
                                     <th>Nome</th>
                                     <th>E-mail</th>
+                                    <th>Tipo de Usuário</th>
                                     <th style="width:100px">Opções</th>
                                 </tr>
                             </thead>
@@ -39,6 +39,7 @@
                                         <td><?= $user->user_id; ?></td>
                                         <td><?= $user->user_nome; ?></td>
                                         <td><?= $user->user_email; ?></td>
+                                        <td><?= tipoUsuario($user->user_permissao); ?></td>
                                         <td>
                                             <a href="<?= base_url('admin/usuarios/editar/'.$user->user_id);?>" class="btn btn-flat btn-info"><i class="fa fa-edit"></i></a>
                                             <a onclick="deletar(<?= $user->user_id; ?>)" class="btn btn-flat btn-danger"><i class="fa fa-trash"></i></a>
@@ -51,6 +52,7 @@
                                    <th>#</th>
                                     <th>Nome</th>
                                     <th>E-mail</th>
+                                    <th>Tipo de Usuário</th>
                                     <th>Opções</th>
                                 </tr>
                             </tfoot>

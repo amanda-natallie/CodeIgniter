@@ -60,12 +60,11 @@ function gerarData($data) {
     return $data2;
 }
 
-function verificaPermissao($logado, $permissao) {
+function verificaPermissao($logado, $permissao, $acesso) {
     if (!$logado) {
         redirect(base_url('admin/login'));
         return false;
-    }
-    if ($permissao != 1) {
+    } else if (($acesso == 1 && $permissao != 1) | ($acesso == 2 && $permissao != 1 && $permissao != 2)) {
         redirect(base_url('admin/'));
         return false;
     } else {
@@ -73,10 +72,33 @@ function verificaPermissao($logado, $permissao) {
     }
 }
 
-function liberaMenu($permissao, $rota, $nomeMenu, $icon) {
+function apenasADM($permissao, $rota, $nomeMenu, $icon) {
     if ($permissao != 1) {
         return false;
     } else {
         echo '<li><a href="' . base_url($rota) . '"><i class="fa ' . $icon . '"></i>' . $nomeMenu . '</a></li>';
     }
 }
+
+function apenasGESTOR($permissao, $rota, $nomeMenu, $icon) {
+    if ($permissao == 1 | $permissao == 2) {
+        echo '<li><a href="' . base_url($rota) . '"><i class="fa ' . $icon . '"></i>' . $nomeMenu . '</a></li>';
+    } else {
+        return false;
+    }
+}
+
+function tipoUsuario($p) {
+    switch ($p) {
+        case 1:
+            return "Administrador Geral";
+            break;
+        case 2:
+            return "Gerente de Conteudo";
+            break;
+        case 2:
+            return "Autor do Blog";
+            break;
+    }
+}
+

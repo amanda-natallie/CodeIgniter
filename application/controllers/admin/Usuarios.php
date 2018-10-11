@@ -7,13 +7,16 @@ class Usuarios extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-
+        
+        
         $this->load->model('usuarios_model', 'Muser');
         $this->usuarios = $this->Muser->lista_usuarios();
+       
+        
     }
 
     public function index() {
-         if (verificaPermissao($this->session->userdata('logado'), $this->session->userdata('userlogado')->user_permissao) == false) {
+         if (verificaPermissao($this->session->userdata('logado'), $this->session->userdata('userlogado')->user_permissao, 2) == 0) {
             exit;
         } else {
             $dados['usuarios'] = $this->usuarios;
@@ -71,11 +74,11 @@ class Usuarios extends CI_Controller {
     }
 
     public function cadastro() {
-        if (verificaPermissao($this->session->userdata('logado'), $this->session->userdata('userlogado')->user_permissao) == false) {
+        if (verificaPermissao($this->session->userdata('logado'), $this->session->userdata('userlogado')->user_permissao, 2) == false) {
             exit;
         } else {
 
-            $dados['usuarios'] = $this->usuarios;
+            $dados['permissao'] = $this->session->userdata('userlogado')->user_permissao;
             $dados['title'] = "Admin";
             $dados['subtitle'] = "Usuário";
 
