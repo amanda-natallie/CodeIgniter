@@ -19,7 +19,7 @@
 
                         <?php
                         echo validation_errors('<div class="alert alert-danger">', '</div>');
-                        echo form_open('admin/usuarios/inserir');
+                        echo form_open('admin/usuarios/cadastrar');
                         ?>
                         <div class="form-group">
                             <label for="cat-nome">Nome</label>
@@ -32,6 +32,10 @@
                         <div class="form-group">
                             <label for="cat-nome">Senha</label>
                             <input type="password" class="form-control" id="cat-nome" name="user_senha" placeholder="Digite a senha do usuário">
+                        </div>
+                        <div class="form-group">
+                            <label for="cat-nome">Confirme a Senha</label>
+                            <input type="password" class="form-control" id="cat-nome" name="user_senha_conf" placeholder="Digite a senha do usuário">
                         </div>
                         <?php if($permissao == 1) { ?>
                         <div class="form-group">

@@ -88,5 +88,26 @@ class Usuarios extends CI_Controller {
             $this->load->view('backend/template/html-footer');
         }
     }
+    public function cadastrar(){
+            $this->load->library("form_validation");
+            $this->form_validation->set_rules('user_nome', "NOME DO USUÁRIO", array('required', 'min_length[3]'));
+            $this->form_validation->set_rules('user_email', "EMAIL DO USUÁRIO", array('trim', 'required','valid_email', 'is_unique[tbl_categorias.cat_nome]', 'min_length[3]'));
+            $this->form_validation->set_rules('user_senha', "SENHA DO USUÁRIO", array('required', 'min_length[3]'));
+            $this->form_validation->set_rules('user_senha_conf', "CONFIRMAÇÃO DA SENHA", array('required', 'min_length[3]', 'matches[user_senha]'));
+            if($this->form_validation->run() == FALSE){
+                $this->cadastro();
+            }else{
+                $nome = $this->input->post('user_nome');
+                $email = $this->input->post('user_email');
+                $senha = $this->input->post('user_senha');
+                $permissao = $this->input->post('user_permissao');
+                if($this->Muser->adicionar($nome, $email, $senha, $permissao)){
+                    redirect(base_url("admin/usuarios"));
+                }else{
+                     $this->cadastro();
+                }
+            }
+
+        }
 
 }

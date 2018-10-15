@@ -24,8 +24,11 @@ class Usuarios_model extends CI_Model {
         return $this->db->get()->result();
     }
 
-    public function adicionar($nome) {
+    public function adicionar($nome, $email, $senha, $permissao) {
         $dados['user_nome'] = $nome;
+        $dados['user_email'] = $email;
+        $dados['user_senha'] = sha1(md5($senha));
+        $dados['user_permissao'] = $permissao;
         return $this->db->insert("tbl_usuarios", $dados);
     }
 

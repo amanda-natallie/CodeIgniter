@@ -96,7 +96,7 @@ function tipoUsuario($p) {
         case 2:
             return "Gerente de Conteudo";
             break;
-        case 2:
+        case 3:
             return "Autor do Blog";
             break;
     }
