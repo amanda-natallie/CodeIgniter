@@ -3,12 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/CodeIgniter/views/backend/usuario/ver.php</file>
-            <file>file:/C:/xampp/htdocs/CodeIgniter/models/Usuarios_model.php</file>
-            <file>file:/C:/xampp/htdocs/CodeIgniter/controllers/admin/Usuarios.php</file>
-            <file>file:/C:/xampp/htdocs/CodeIgniter/views/backend/usuario/editar.php</file>
-            <file>file:/C:/xampp/htdocs/CodeIgniter/views/backend/usuario/cadastrar.php</file>
-            <file>file:/C:/xampp/htdocs/CodeIgniter/controllers/admin/Categoria.php</file>
+            <file>file:/C:/xampp/htdocs/CodeIgniter/application/controllers/admin/Usuarios.php</file>
+            <file>file:/C:/xampp/htdocs/CodeIgniter/application/helpers/funcoes_helper.php</file>
+            <file>file:/C:/xampp/htdocs/CodeIgniter/application/models/Usuarios_model.php</file>
+            <file>file:/C:/xampp/htdocs/CodeIgniter/application/views/backend/template/template.php</file>
+            <file>file:/C:/xampp/htdocs/CodeIgniter/application/controllers/admin/Categoria.php</file>
+            <file>file:/C:/xampp/htdocs/CodeIgniter/application/views/backend/usuario/editar.php</file>
+            <file>file:/C:/xampp/htdocs/CodeIgniter/application/views/backend/home.php</file>
+            <file>file:/C:/xampp/htdocs/CodeIgniter/application/views/backend/usuario/ver.php</file>
+            <file>file:/C:/xampp/htdocs/CodeIgniter/application/views/backend/usuario/cadastrar.php</file>
         </group>
     </open-files>
 </project-private>

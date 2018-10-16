@@ -37,9 +37,12 @@ class Usuarios_model extends CI_Model {
         return $this->db->delete("tbl_usuarios", $dados);
     }
 
-    public function editar($id, $nome) {
+    public function editar($id, $nome, $email, $senha, $permissao) {
         $dados['user_id'] = $id;
         $dados['user_nome'] = $nome;
+        $dados['user_email'] = $email;
+        $dados['user_senha'] = sha1(md5($senha));
+        $dados['user_permissao'] = $permissao;
         $this->db->where("user_id", $id);
         return $this->db->update("tbl_usuarios", $dados);
     }
