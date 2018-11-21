@@ -1,7 +1,7 @@
 <header class="main-header">
                 <a href="<?= base_url()?>" class="logo">
-                    <span class="logo-mini"><b>A</b>LT</span>
-                    <span class="logo-lg"><b>Admin</b>LTE</span>
+                    <span class="logo-mini"><b>D</b>M</span>
+                    <span class="logo-lg"><b>Detalhes</b> de Minas</span>
                 </a>
                 <nav class="navbar navbar-static-top">
                     <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
@@ -15,20 +15,20 @@
                         <ul class="nav navbar-nav">
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="<?= base_url("assets/backend/img/user2-160x160.jpg")?>" class="user-image" alt="User Image">
+                                    <img src="<?= base_url("assets/backend/img/avatar3.png")?>" class="user-image" alt="User Image">
                                     <span class="hidden-xs"><?= $this->session->userdata('userlogado')->user_nome; ?></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="user-header">
-                                        <img src="<?= base_url("assets/backend/img/user2-160x160.jpg")?>" class="img-circle" alt="User Image">
+                                        <img src="<?= base_url("assets/backend/img/avatar3.png")?>" class="img-circle" alt="User Image">
                                         <p>
-                                            <?= $this->session->userdata('userlogado')->user_nome; ?> - Web Developer
-                                            <small>Member since Nov. 2012</small>
+                                            <?= $this->session->userdata('userlogado')->user_nome; ?> - Usuário
+                                          
                                         </p>
                                     </li>
                                     <li class="user-footer">
                                         <div class="pull-left">
-                                            <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                            <!--<a href="#" class="btn btn-default btn-flat">Profile</a>-->
                                         </div>
                                         <div class="pull-right">
                                             <a href="<?= base_url('admin/usuarios/logout')?>" class="btn btn-default btn-flat">Deslogar</a>
@@ -45,7 +45,7 @@
                 <section class="sidebar">
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="<?= base_url("assets/backend/img/user2-160x160.jpg")?>" class="img-circle" alt="User Image">
+                            <img src="<?= base_url("assets/backend/img/avatar3.png")?>" class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info">
                             <p><?= $this->session->userdata('userlogado')->user_nome; ?></p>
@@ -60,7 +60,7 @@
                         <li><a href="<?= base_url(); ?>"><i class="fa fa-home"></i> <span>Home</span></a></li>
                         <?= apenasADM($p, 'admin/categoria', "Categorias", "fa-calculator"); ?>
                         <?= apenasGESTOR($p, 'admin/usuarios', "Usuários", "fa-user"); ?>
-                        <li><a href="ger_slides.php"><i class="fa fa-camera"></i>Slides Home</a></li>
+                        <li><a href="admin/slide"><i class="fa fa-camera"></i>Slides Home</a></li>
                         <!--<li class="treeview">
                             <a href="#">
                                 <i class="fa fa-file-archive-o"></i> <span>Configurações de Textos</span>

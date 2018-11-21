@@ -1,34 +1,45 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html class="" lang="pt-br">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?= $title; if(isset($titulo_categoria)) {foreach($titulo_categoria as $nomecat){echo $nomecat->cat_nome;}}?></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
         <base href="<?= base_url()?>">
-        <link href="<?= base_url("assets/frontend/assets/css/bootstrap.min.css");?>" rel="stylesheet">
-        <link href="<?= base_url("assets/frontend/assets/css/font-awesome.min.css");?>" rel="stylesheet">
-        <link href="<?= base_url("assets/frontend/assets/css/material-design-iconic-font.min.css");?>" rel="stylesheet">
-        <link href="<?= base_url("assets/frontend/assets/css/owl.carousel.css");?>" rel="stylesheet">
-        <link href="<?= base_url("assets/frontend/assets/css/animate.css");?>" rel="stylesheet">
-        <link rel="stylesheet" href="<?= base_url("assets/frontend/assets/css/owl.carousel.css");?>">
-        <link rel="stylesheet" href="<?= base_url("assets/frontend/assets/css/sweet.alert.css");?>">
-        <link rel="stylesheet" href="<?= base_url("assets/frontend/assets/css/slicknav.min.css");?>">
-        <link rel="stylesheet" href="<?= base_url("assets/frontend/assets/css/magnific.pupup.css");?>">
-        <link rel="stylesheet" href="<?= base_url("assets/frontend/assets/css/style.css");?>">
-        <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700%7CNoto+Sans:400,700" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic' rel='stylesheet' type='text/css'>
+        <link href='<?= base_url("assets/frontend/img/favicon.png")?>' rel='shortcut icon' >
+
+        <link type="text/css" href="<?= base_url("assets/frontend/")?>css/lib/bootstrap.min.css" rel="stylesheet">
+        <link type="text/css" href="<?= base_url("assets/frontend/")?>css/lib/bootstrap-datepicker.min.css" rel="stylesheet">
+        <link type="text/css" href="<?= base_url("assets/frontend/")?>css/lib/font-awesome.min.css" rel="stylesheet">
+        <link type="text/css" href="<?= base_url("assets/frontend/")?>rs-plugin/css/settings.css" rel="stylesheet">
+        <link type="text/css" href="<?= base_url("assets/frontend/")?>css/lib/owl.carousel.css" rel="stylesheet">
+        <link type="text/css" href="<?= base_url("assets/frontend/")?>css/lib/owl.theme.css" rel="stylesheet">
+        <link type="text/css" href="<?= base_url("assets/frontend/")?>css/lib/owl.transitions.css" rel="stylesheet">
+        <link type="text/css" href="<?= base_url("assets/frontend/")?>css/lib/magnific-popup.css" rel="stylesheet">
+        <link type="text/css" href="<?= base_url("assets/frontend/")?>css/lib/select2.min.css" rel="stylesheet">
+        <link type="text/css" href="<?= base_url("assets/frontend/")?>css/style.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <script src="<?= base_url("assets/frontend/assets/js/jquery.min.js");?>"></script>
+
+        <title><?= $title; if(isset($titulo_categoria)) {foreach($titulo_categoria as $nomecat){echo $nomecat->cat_nome;}}?></title>
     </head>
-      <body class="home">
-        <div class="preloader" aria-busy="true" aria-label="Carregando, aguarde." role="progressbar"></div>
-        <div class="preloader--main">
-            <div class="st--inner">
-                <span class="preloader-spin"></span>
+
+    <body>
+        <div id="preload" class="preload">
+            <div class="spinner">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
             </div>
         </div>
-        <div class="preloader btm" aria-busy="true" aria-label="Carregando, aguarde." role="progressbar"></div>
-        <div class="site_wrap">
+
+        <div id="page-wrap">
+
