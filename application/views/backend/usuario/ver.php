@@ -18,7 +18,7 @@
                 <div class="box box-info">
                     <div class="box-header">
                         <h3 class="box-title">Visualize aqui os <?= $subtitle; ?>s existentes</h3>
-                        <a href="<?= base_url('admin/usuarios/cadastro');?>" class="btn btn-small pull-right btn-flat btn-primary">Inserir novo usuário</a>
+                        <a href="<?= base_url('admin/usuarios/inserir');?>" class="btn btn-small pull-right btn-flat btn-primary">Inserir novo usuário</a>
                     </div>
 
                     <div class="box-body">

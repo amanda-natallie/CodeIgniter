@@ -10,7 +10,7 @@
         <base href="<?= base_url()?>">
         <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic' rel='stylesheet' type='text/css'>
-        <link href='<?= base_url("assets/frontend/img/favicon.png")?>' rel='shortcut icon' >
+        <link href='<?= base_url($img[6])?>' rel='shortcut icon' >
 
         <link type="text/css" href="<?= base_url("assets/frontend/")?>css/lib/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="<?= base_url("assets/frontend/")?>css/lib/bootstrap-datepicker.min.css" rel="stylesheet">
