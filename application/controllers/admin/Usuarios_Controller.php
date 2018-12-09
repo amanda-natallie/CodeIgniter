@@ -38,7 +38,7 @@ class Usuarios_Controller extends CI_Controller {
     }
 
     public function login() {
-        $this->load->library("form_validation");
+        
         $this->form_validation->set_rules('user-usuario', "EMAIL", array('required', 'min_length[3]'));
         $this->form_validation->set_rules('user-senha', "SENHA", array('required', 'min_length[3]'));
         if ($this->form_validation->run() == FALSE) {
@@ -87,7 +87,7 @@ class Usuarios_Controller extends CI_Controller {
     }
 
     public function cadastrar() {
-        $this->load->library("form_validation");
+        
         $this->form_validation->set_rules('user_nome', "NOME DO USUÁRIO", array('required', 'min_length[3]'));
         $this->form_validation->set_rules('user_email', "EMAIL DO USUÁRIO", array('trim', 'required', 'valid_email', 'is_unique[tbl_usuarios.user_email]', 'min_length[3]'));
         $this->form_validation->set_rules('user_senha', "SENHA DO USUÁRIO", array('required', 'min_length[3]'));
@@ -126,7 +126,7 @@ class Usuarios_Controller extends CI_Controller {
     public function salvar_alteracoes() {
         $id = $this->input->post('user_id');
 
-        $this->load->library("form_validation");
+        
         $this->form_validation->set_rules('user_nome', "NOME DO USUÁRIO", array('required', 'min_length[3]'));
         $this->form_validation->set_rules('user_email', "EMAIL DO USUÁRIO", array('trim', 'required', 'valid_email', 'min_length[3]'));
         $this->form_validation->set_rules('user_senha', "SENHA DO USUÁRIO", array('required', 'min_length[3]'));

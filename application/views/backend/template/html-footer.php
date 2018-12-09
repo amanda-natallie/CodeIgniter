@@ -12,6 +12,8 @@
 <script src="<?= base_url("assets/backend/components/ckeditor/ckeditor.js")?>"></script>
 <script src="<?= base_url("assets/backend/components/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js")?>"></script>
 <script src="<?= base_url("assets/backend/components/bootstrap-fileupload/bootstrap-fileupload.min.js")?>"></script>
+<script src="<?= base_url("assets/backend/components/dropzone/dropzone.min.js")?>"></script>
+<script src="<?= base_url("assets/backend/components/dropzone/form-dropzone.min.js")?>"></script>
 <script src="<?= base_url("assets/backend/js/adminlte.min.js") ?>"></script>
 <script src="<?= base_url("assets/backend/js/demo.js") ?>"></script>
 <script>

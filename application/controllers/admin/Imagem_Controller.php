@@ -43,8 +43,8 @@ class Imagem_Controller extends CI_Controller {
 
     public function cadastrar() {
         ini_set('upload_max_filesize', '20M');
-        $this->load->library("form_validation");
-        $this->load->helper('do_upload_helper');
+        
+        
         $this->form_validation->set_rules('img_localizacao', "LOCALIZAÇÃO DA IMAGEM", array('required'));
         $this->form_validation->set_rules('img_alt', "TEXTO ALTERNATIVO", array('required'));
         $this->form_validation->set_rules('img_title', "TITULO DA IMAGEM", array('required'));
@@ -87,8 +87,8 @@ class Imagem_Controller extends CI_Controller {
     public function salvar_alteracoes() {
         $id = $this->input->post('img_id');
         ini_set('upload_max_filesize', '20M');
-        $this->load->library("form_validation");
-        $this->load->helper('do_upload_helper');
+        
+        
         $this->form_validation->set_rules('img_localizacao', "LOCALIZAÇÃO DA IMAGEM", array('required'));
         $this->form_validation->set_rules('img_alt', "TEXTO ALTERNATIVO", array('required'));
         $this->form_validation->set_rules('img_title', "TITULO DA IMAGEM", array('required'));

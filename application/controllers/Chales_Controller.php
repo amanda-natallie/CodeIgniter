@@ -1,21 +1,1 @@
-<?php ob_start(); defined('BASEPATH') OR exit('No direct script access allowed');
-
-class Chales extends CI_Controller {
-        
-        public function __construct() {
-            parent::__construct();
-          
-        }
-    
-	public function index()
-	{
-                /*Meta tags*/
-                $dados['title'] = "Chales - Detalhes de Minas";
-                         
-		$this->load->view('frontend/template/html-header', $dados);
-		$this->load->view('frontend/template/header');
-		$this->load->view('frontend/chales');
-		$this->load->view('frontend/template/footer');
-		$this->load->view('frontend/template/html-footer');
-	}
-}
+<?php ob_start(); defined('BASEPATH') OR exit('No direct script access allowed');class Chales_Controller extends CI_Controller {    public function __construct() {        parent::__construct();         $this->load->model("textos_model", "mtxt");        $this->load->model("imagem_model", "mimg");        $this->load->model("tarifa_model", "mtar");        $this->load->model("fotosChale_model", "mfot");    }     public function index() {                foreach ($this->mtxt->lista_textos_geral() as $texto) {            $txt_id = $texto['txt_id'];            $txt[$txt_id] = $texto['txt_texto'];        }        foreach ($this->mimg->lista_imagem_geral() as $imagem) {            $img_id = $imagem['img_id'];            $img[$img_id] = $imagem['img_imagem'];            $img_alt[$img_id] = $imagem['img_alt'];            $img_title[$img_id] = $imagem['img_title'];        }                                $dados["img"] = $img;        $dados["img_alt"] = $img_alt;        $dados["img_title"] = $img_title;        $dados["txt"] = $txt;                $dados['title'] = "Chalés - Detalhes de Minas";        $this->load->view('frontend/template/html-header', $dados);        $this->load->view('frontend/template/header');        $this->load->view('frontend/chales');        $this->load->view('frontend/template/footer');        $this->load->view('frontend/template/html-footer');    }}
