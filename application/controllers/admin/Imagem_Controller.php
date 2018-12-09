@@ -10,7 +10,7 @@ class Imagem_Controller extends CI_Controller {
         if (!$this->session->userdata('logado')) {
             redirect(base_url('admin/login'));
         }
-        $this->load->model("imagem_model", "mimg");
+        
     }
 
     public function index($id) {
