@@ -80,8 +80,7 @@ class Tarifa_Controller extends CI_Controller {
         $this->load->view('backend/template/html-footer');
     }
 
-    public function salvar_alteracoes() {
-       
+    public function salvarAlteracoes() {
         $id = $this->input->post('tar_id');
         $this->form_validation->set_rules('tar_periodo', "PERÍODO DO ANO", array('required', 'min_length[1]', 'max_length[150]'));
         $this->form_validation->set_rules('tar_dias', "DIAS DO PERÍODO DO ANO", array('required', 'min_length[1]', 'max_length[150]'));
@@ -107,6 +106,7 @@ class Tarifa_Controller extends CI_Controller {
             ];
 
             $retornoCad = $this->mtar->editar($arr_tarifas);
+            
             if ($retornoCad) {
                 redirect(base_url("admin/chale/tarifas/" . $this->input->post('tar_quarto')));
             } else {
